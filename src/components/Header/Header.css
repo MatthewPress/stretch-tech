@@ -1,4 +1,10 @@
 header {
   color: #FFFFFF;
-  background: #1d178d;
+  background: #dd6402;
+  padding: 1rem;
+  display: flex;
+}
+
+img {
+  height: 2rem;
 }
