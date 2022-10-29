@@ -4,3 +4,11 @@ p {
   color: #FFFFFF;
   margin: 0;
 }
+
+.main--container {
+  background: #cd08e7;
+  height: 75vh;
+  width: 90vw;
+  padding: 2rem;
+  margin: 0 auto;
+}

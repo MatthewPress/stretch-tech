@@ -1,8 +1,9 @@
 header {
   color: #FFFFFF;
-  background: #dd6402;
-  padding: 1rem;
+  background: #cd08e7;
   display: flex;
+  padding: 1rem;
+  margin-bottom: 5vw;
 }
 
 img {
