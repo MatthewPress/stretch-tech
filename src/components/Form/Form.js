@@ -6,7 +6,17 @@ function Form({ message, formFields, handleSubmit }) {
   console.log({formFields})
 
   const buttons = formFields.map(field => {
-    return <button type="submit" onClick={(event) => handleSubmit(event)} value={field.type} key={field.value}>{field.type.toUpperCase()}</button>
+    return (
+      <button
+        className="hvr-pulse"
+        type="submit" 
+        onClick={(event) => handleSubmit(event)} 
+        value={field.type} 
+        key={field.id}
+      >
+        {field.type.toUpperCase()}
+      </button>
+    )
   });
   
   console.log({buttons})
