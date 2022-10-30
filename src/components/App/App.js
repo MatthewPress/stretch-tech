@@ -6,6 +6,7 @@ import emotionsData from '../../testData/emotionsData';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResourceQueryForm from '../ResourceQueryForm/ResourceQueryForm';
+import ResourceContainer from '../ResourceContainer/ResourceContainer';
 
 import './App.css';
 
@@ -50,7 +51,7 @@ function App() {
             <Route 
               exact path={`/:emotionType/:resourceType`}
               render={() => 
-                <p>Hey</p>
+                <ResourceContainer />
               }
             />
           </Switch>
