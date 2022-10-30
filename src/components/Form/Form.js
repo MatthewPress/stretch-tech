@@ -12,7 +12,7 @@ function Form({ message, formFields, handleSubmit }) {
           className="hvr-pulse"
           type="submit" 
           onClick={(event) => handleSubmit(event.target.value)} 
-          value={field.id} 
+          value={field.id}
         >
           {field.type.toUpperCase()}
         </button>
