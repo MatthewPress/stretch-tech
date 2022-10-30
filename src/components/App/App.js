@@ -21,7 +21,8 @@ function App() {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    // replace emotionsData with url path
+    // replace emotionsData with url path when backend is available
+      // example `/emotions`
     getData(emotionsData)
       .then((data) => {
         setEmotions(data);
@@ -37,6 +38,10 @@ function App() {
 
   const handleResourceSelection = (selection) => {
     setSelectedResource(selection);
+
+    // Problem: not working
+    // replace resourcesData with url path when backend is available
+      // example `/emotions/${selectedResource.type}`
     getData(resourcesData)
       .then((data) => {
         setResources(data);
@@ -44,6 +49,8 @@ function App() {
       .catch((error) => {
         console.log(error);
       })
+    
+    // remove when above statement is working
     setResources(resourcesData);
   }
 
