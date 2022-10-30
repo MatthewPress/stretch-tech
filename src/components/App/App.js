@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
 import ResourceContainer from '../ResourceContainer/ResourceContainer';
+import ErrorContainer from '../ErrorContainer/ErrorContainer';
 
 import { getData } from '../../apiCalls/apiCalls';
 
@@ -19,6 +20,7 @@ function App() {
   const [userEmotion, setUserEmotion] = useState({});
   const [selectedResource, setSelectedResource] = useState({});
   const [resources, setResources] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
 
   useEffect(() => {
     // replace emotionsData with url path when backend is available
@@ -28,7 +30,7 @@ function App() {
         setEmotions(data);
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage("Sorry, we could get our EMOTIONS data. Maybe try starting again.");
       })
   }, []);
 
@@ -39,7 +41,6 @@ function App() {
   const handleResourceSelection = (selection) => {
     setSelectedResource(selection);
 
-    // Problem: not working
     // replace resourcesData with url path when backend is available
       // example `/emotions/${selectedResource.type}`
     getData(resourcesData)
@@ -47,11 +48,8 @@ function App() {
         setResources(data);
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage("Sorry, we could get our RESOURCES data. Maybe try starting again.");
       })
-    
-    // remove when above statement is working
-    setResources(resourcesData);
   }
 
   const handleStartAgain = () => {
@@ -64,46 +62,63 @@ function App() {
       <Header handleStartAgain={handleStartAgain} />
       <main>
         <section className="main--container">
-          <Switch>
-            <Route 
-              exact path="/"
-              render={() => 
-                <Form 
-                  message="How are you feeling?" 
-                  formFields={emotions} 
-                  handleSubmit={handleEmotionSelection}
-                />  
-              }
-            />
-            <Route
-              exact path={`/:emotionType`}
-              render={() =>
-                <ResourceSelectionForm 
-                  message="Would you like some words of encouragement or coping strategies?" 
-                  formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
-                  handleSubmit={handleResourceSelection}
-                  userEmotion={userEmotion}
-                />
-              } 
-            />
-            <Route 
-              exact path={`/:emotionType/:resourceType`}
-              render={() => 
-                <ResourceContainer 
-                  resources={resources} 
-                  handleStartAgain={handleStartAgain} 
-                  userEmotion={userEmotion}
-                  selectedResource={selectedResource}
-                />
-              }
-            />
-            <Route
-              exact path={`/:emotionType/:resourceType/addition`} 
-              render={() =>
-                <p>Hey</p>
-              }
-            />
-          </Switch>
+          {
+            !emotions.length
+              ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
+              : <Switch>
+                  <Route 
+                    exact path="/"
+                    render={() => 
+                      <Form 
+                        message="How are you feeling?" 
+                        formFields={emotions} 
+                        handleSubmit={handleEmotionSelection}
+                      />  
+                    }
+                  />
+                  <Route
+                    exact path={`/:emotionType`}
+                    render={() =>
+                      !Object.keys(userEmotion).length 
+                        ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
+                        : <ResourceSelectionForm 
+                            message="Would you like some words of encouragement or coping strategies?" 
+                            formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
+                            handleSubmit={handleResourceSelection}
+                            userEmotion={userEmotion}
+                          />
+                      
+                    } 
+                  />
+                  <Route 
+                    exact path={`/:emotionType/:resourceType`}
+                    render={() => 
+                      !resources.length
+                        ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
+                        : <ResourceContainer 
+                            resources={resources} 
+                            handleStartAgain={handleStartAgain} 
+                            userEmotion={userEmotion}
+                            selectedResource={selectedResource}
+                          />
+                    
+                    }
+                  />
+                  <Route
+                    exact path={`/:emotionType/:resourceType/addition`} 
+                    render={() =>
+                      !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
+                        ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
+                        : <p>Add Message</p>
+                    }
+                  />
+                  <Route 
+                    render={() =>
+                      <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain}/>
+                    } 
+                  />
+                </Switch>
+          }
         </section>
       </main>
     </div>
