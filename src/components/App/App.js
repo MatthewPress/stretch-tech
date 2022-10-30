@@ -5,6 +5,7 @@ import emotionsData from '../../testData/emotionsData';
 
 import Header from '../Header/Header';
 import Form from '../Form/Form';
+import ResourceQueryForm from '../ResourceQueryForm/ResourceQueryForm';
 
 import './App.css';
 
@@ -38,10 +39,11 @@ function App() {
             <Route
               exact path={`/:emotionType`}
               render={() =>
-                <Form 
+                <ResourceQueryForm 
                   message="Would you like some words of encouragement or coping strategies?" 
                   formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
                   handleSubmit={setRequestedResource}
+                  userEmotion={userEmotion}
                 />
               } 
             />
