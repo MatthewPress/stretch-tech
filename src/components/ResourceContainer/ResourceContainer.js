@@ -3,7 +3,12 @@ import './ResourceContainer.css';
 function ResourceContainer({ resources }) {
   console.log({resources})
   return (
-    <p className="resource--display">{resources[0].resourceString}</p>
+    <article className="resource--container">
+      <div className="resource-display--container">
+        <p className="resource-display">{resources[0].resourceString}</p>
+      </div>
+      
+    </article>
   )
 }
 
