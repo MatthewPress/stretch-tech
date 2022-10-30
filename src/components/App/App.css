@@ -5,6 +5,10 @@ p {
   margin: 0;
 }
 
+p {
+  font-size: 1.5rem;
+}
+
 .main--container {
   background: #cd08e7;
   height: 75vh;
