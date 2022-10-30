@@ -30,7 +30,7 @@ function App() {
           <Route 
             exact path="/"
             render={() => 
-              <Form emotions={emotions} handleSubmit={handleSubmit} />  
+              <Form message="How are you feeling?" formFields={emotions} handleSubmit={handleSubmit} />  
             }
           />
           {/* <QueryForm emotions={emotions} /> */}
