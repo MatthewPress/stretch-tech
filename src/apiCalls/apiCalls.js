@@ -4,15 +4,14 @@ const returnData = (path) => {
 }
 
 const getData = async (path) => {
-  // replace returnData(path) with fetch(`baseURL${path}`)
   try {
+    // const response = await fetch(path);
     const response = await returnData(path);
     if(!response.ok) {
       throw new Error();
     } else {
-      const data = await response.data
       // const data = await response.json();
-      console.log({data});
+      const data = await response.data;
       return data;
     }
   } catch (error) {

@@ -23,8 +23,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
 
   useEffect(() => {
-    // replace emotionsData with url path when backend is available
-      // example `/emotions`
+    // getData(`/emotions`)
     getData(emotionsData)
       .then((data) => {
         setEmotions(data);
@@ -41,8 +40,7 @@ function App() {
   const handleResourceSelection = (selection) => {
     setSelectedResource(selection);
 
-    // replace resourcesData with url path when backend is available
-      // example `/emotions/${selectedResource.type}`
+    // getData(`/emotions/${selectedResource.type}`)
     getData(resourcesData)
       .then((data) => {
         setResources(data);
