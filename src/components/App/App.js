@@ -10,8 +10,8 @@ import './App.css';
 
 function App() {
   const [emotions, setEmotions] = useState([]);
-  const [userEmotion, setUserEmotion] = useState("");
-  const [requestedResource, setRequestedResource] = useState("");
+  const [userEmotion, setUserEmotion] = useState({});
+  const [requestedResource, setRequestedResource] = useState({});
 
   useEffect(() => {
     setEmotions(emotionsData);
@@ -31,7 +31,7 @@ function App() {
                 <Form 
                   message="How are you feeling?" 
                   formFields={emotions} 
-                  handleSubmit={setUserEmotion} 
+                  handleSubmit={setUserEmotion}
                 />  
               }
             />
@@ -40,8 +40,8 @@ function App() {
               render={() =>
                 <Form 
                   message="Would you like some words of encouragement or coping strategies?" 
-                  formFields={[{ id: 1, type: "words of encouragement"}, { id: 2, type: "coping strategies"}]} 
-                  handleSubmit={setRequestedResource} 
+                  formFields={[{ id: 1, type: "words", value: "words"}, { id: 2, type: "strategies", value: "strategies"}]} 
+                  handleSubmit={setRequestedResource}
                 />
               } 
             />
