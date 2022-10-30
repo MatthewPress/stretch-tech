@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './Form.css';
 
 function Form({ message, formFields, handleSubmit }) {
-  console.log({formFields})
 
   const buttons = formFields.map(field => {
     return (
@@ -20,8 +19,6 @@ function Form({ message, formFields, handleSubmit }) {
       </Link>
     )
   });
-  
-  console.log({buttons})
 
   return (
     <form>

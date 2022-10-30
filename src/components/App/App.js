@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
 import emotionsData from '../../testData/emotionsData';
+
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 
