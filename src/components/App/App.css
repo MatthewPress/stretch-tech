@@ -1,0 +1,106 @@
+h1, h2, h3, 
+h4, h5, h6, 
+p {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.main--container {
+  background: #cd08e7;
+  height: 75vh;
+  width: 90vw;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.form-message {
+  margin-bottom: 2rem;
+}
+
+.buttons--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  color: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  background-color:rgb(56, 3, 106);
+  height: 4rem;
+  width: 20rem;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  margin: 2%;
+}
+
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+}
+
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.resource--container {
+  height: 100%;
+  width: 100%;
+}
+
+.resource-display--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+}
+
+.resource-button--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 30%;
+  width: 100%;
+}
+
+.resource--button {
+  width: 14rem;
+}
