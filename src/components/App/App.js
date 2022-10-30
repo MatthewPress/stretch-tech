@@ -36,11 +36,11 @@ function App() {
               }
             />
             <Route
-              exact path="/:emotionType"
+              exact path={`/:emotionType`}
               render={() =>
                 <Form 
                   message="Would you like some words of encouragement or coping strategies?" 
-                  formFields={[{ id: 1, type: "words", value: "words"}, { id: 2, type: "strategies", value: "strategies"}]} 
+                  formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
                   handleSubmit={setRequestedResource}
                 />
               } 

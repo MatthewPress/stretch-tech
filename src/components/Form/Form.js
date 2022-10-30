@@ -7,7 +7,10 @@ function Form({ message, formFields, handleSubmit }) {
 
   const buttons = formFields.map(field => {
     return (
-      <Link to={`/${field.type}`} key={field.id}>
+      <Link 
+        to={`/${field.type}`} 
+        key={field.id}
+      >
         <button
           className="hvr-pulse"
           type="submit" 
