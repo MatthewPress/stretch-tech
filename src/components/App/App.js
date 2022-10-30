@@ -47,6 +47,12 @@ function App() {
                 />
               } 
             />
+            <Route 
+              exact path={`/:emotionType/:resourceType`}
+              render={() => 
+                <p>Hey</p>
+              }
+            />
           </Switch>
         </section>
       </main>
