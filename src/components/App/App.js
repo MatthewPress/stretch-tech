@@ -3,7 +3,7 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 
 import emotionsData from '../../testData/emotionsData';
 import Header from '../Header/Header';
-// import QueryForm from '../QueryForm/QueryForm';
+import Form from '../Form/Form';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ function App() {
           <Route 
             exact path="/"
             render={() => 
-              <p>Hey</p>  
+              <Form emotions={emotions} />  
             }
           />
           {/* <QueryForm emotions={emotions} /> */}
