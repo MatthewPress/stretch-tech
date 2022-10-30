@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
+// remove when backend is available
 import emotionsData from '../../testData/emotionsData';
 import resourcesData from '../../testData/resourcesData';
 
@@ -8,6 +9,8 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResourceQueryForm from '../ResourceQueryForm/ResourceQueryForm';
 import ResourceContainer from '../ResourceContainer/ResourceContainer';
+
+import { getData } from '../../apiCalls/apiCalls';
 
 import './App.css';
 
@@ -18,9 +21,27 @@ function App() {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    setEmotions(emotionsData);
-    setResources(resourcesData);
+    // replace emotionsData with url path
+    getData(emotionsData)
+      .then((data) => {
+        setEmotions(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }, []);
+
+  const handleResourceSelection = (request) => {
+    setRequestedResource(request.id);
+    getData(resourcesData)
+      .then((data) => {
+        setResources(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    setResources(resourcesData);
+  }
 
   return (
     <div className="app--container">
@@ -46,7 +67,7 @@ function App() {
                 <ResourceQueryForm 
                   message="Would you like some words of encouragement or coping strategies?" 
                   formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
-                  handleSubmit={setRequestedResource}
+                  handleSubmit={handleResourceSelection}
                   userEmotion={userEmotion}
                 />
               } 

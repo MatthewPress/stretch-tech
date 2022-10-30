@@ -7,7 +7,6 @@ function ResourceContainer({ resources }) {
       <div className="resource-display--container">
         <p className="resource-display">{resources[0].resourceString}</p>
       </div>
-      
     </article>
   )
 }
