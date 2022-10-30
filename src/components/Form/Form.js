@@ -1,12 +1,23 @@
+// import React, { useState } from 'react';
+
 import './Form.css';
 
-function Form({ emotions }) {
-  // const buttons = emotions.map(emotion => {
-  //   <Button emotion={emotion} />
-  // })
+function Form({ emotions, handleSubmit }) {
+  console.log({emotions})
+
+  const buttons = emotions.map(emotion => {
+    return <button type="submit" onClick={(event) => handleSubmit(event)} value={emotion.type} key={emotion.value}>{emotion.type}</button>
+  });
   
+  console.log({buttons})
+
   return (
-    <p>How are you feeling today?</p>
+    <form>
+      <p>How are you feeling today?</p>
+      <div className="button--container">
+        {buttons}
+      </div>
+    </form>
   )
 }
 

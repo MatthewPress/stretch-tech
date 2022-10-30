@@ -9,10 +9,16 @@ import './App.css';
 
 function App() {
   const [emotions, setEmotions] = useState([]);
+  const [userEmotion, setUserEmotion] = useState("");
 
   useEffect(() => {
     setEmotions(emotionsData);
   }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUserEmotion(event.target.value);
+  }
 
   return (
     <div className="app--container">
@@ -24,7 +30,7 @@ function App() {
           <Route 
             exact path="/"
             render={() => 
-              <Form emotions={emotions} />  
+              <Form emotions={emotions} handleSubmit={handleSubmit} />  
             }
           />
           {/* <QueryForm emotions={emotions} /> */}
