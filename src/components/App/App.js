@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
 import emotionsData from '../../testData/emotionsData';
+import resourcesData from '../../testData/resourcesData';
 
 import Header from '../Header/Header';
 import Form from '../Form/Form';
@@ -14,9 +15,11 @@ function App() {
   const [emotions, setEmotions] = useState([]);
   const [userEmotion, setUserEmotion] = useState({});
   const [requestedResource, setRequestedResource] = useState({});
+  const [resources, setResources] = useState([]);
 
   useEffect(() => {
     setEmotions(emotionsData);
+    setResources(resourcesData);
   }, []);
 
   return (
@@ -51,7 +54,7 @@ function App() {
             <Route 
               exact path={`/:emotionType/:resourceType`}
               render={() => 
-                <ResourceContainer />
+                <ResourceContainer resources={resources} />
               }
             />
           </Switch>

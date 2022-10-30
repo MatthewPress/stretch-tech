@@ -1,8 +1,9 @@
 import './ResourceContainer.css';
 
-function ResourceContainer() {
+function ResourceContainer({ resources }) {
+  console.log({resources})
   return (
-    <p>Hey</p>
+    <p className="resource--display">{resources[0].resourceString}</p>
   )
 }
 
