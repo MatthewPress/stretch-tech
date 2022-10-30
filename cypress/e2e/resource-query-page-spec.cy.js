@@ -1,6 +1,11 @@
 describe('Resource Query Page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/anger');
+    cy.visit('http://localhost:3000');
+
+    cy.get('.main--container')
+      .get('button')
+      .first()
+      .click();
   })
   
   it('Should render a header', () => {
