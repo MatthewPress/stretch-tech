@@ -10,3 +10,15 @@
   height: 70%;
   width: 100%;
 }
+
+.resource-button--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 30%;
+  width: 100%;
+}
+
+.resource--button {
+  width: 14rem;
+}

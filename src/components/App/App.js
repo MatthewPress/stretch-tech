@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // remove when backend is available
 import emotionsData from '../../testData/emotionsData';
@@ -43,11 +43,14 @@ function App() {
     setResources(resourcesData);
   }
 
+  const handleStartAgain = () => {
+    setUserEmotion({});
+    setRequestedResource({});
+  }
+
   return (
     <div className="app--container">
-      <NavLink to="/">
-        <Header />
-      </NavLink>
+      <Header handleStartAgain={handleStartAgain} />
       <main>
         <section className="main--container">
           <Switch>
@@ -75,7 +78,18 @@ function App() {
             <Route 
               exact path={`/:emotionType/:resourceType`}
               render={() => 
-                <ResourceContainer resources={resources} />
+                <ResourceContainer 
+                  resources={resources} 
+                  handleStartAgain={handleStartAgain} 
+                  userEmotion={userEmotion}
+                  requestedResource={requestedResource}
+                />
+              }
+            />
+            <Route
+              exact path={`/:emotionType/:resourceType/addition`} 
+              render={() =>
+                <p>Hey</p>
               }
             />
           </Switch>

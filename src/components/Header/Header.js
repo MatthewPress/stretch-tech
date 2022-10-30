@@ -1,13 +1,17 @@
+import { NavLink } from 'react-router-dom';
+
 import logo from '../../assets/1200px-ghost-logo.svg.png';
 
 import './Header.css';
 
-function Header() {
+function Header({ handleStartAgain }) {
   return (
-    <header>
-      <img src={logo} alt="Cheers For Fears Ghost Logo" />
-      <h1>Cheers For Fears</h1>
-    </header>
+    <NavLink to="/">
+      <header>
+        <img src={logo} alt="Cheers For Fears Ghost Logo" />
+        <h1 onClick={() => handleStartAgain()}>Cheers For Fears</h1>
+      </header>
+    </NavLink>
   )
 }
 
