@@ -21,6 +21,7 @@ describe('Landing Page', () => {
 
   it('Should navigate to the requested resource page for a specific emotion when an emotion is picked', () => {
     cy.get('.main--container')
+      .get('form')
       .get('button')
       .first()
       .click();

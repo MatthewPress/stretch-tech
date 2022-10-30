@@ -16,7 +16,7 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedR
           </button>
         </Link>
         <Link to={`/${userEmotion.type}/${selectedResource.type}/addition`}>
-          <button className="resource--button" onClick={() => handleStartAgain()}>
+          <button className="resource--button" name="addMessage">
             ADD A MESSAGE
           </button>
         </Link>

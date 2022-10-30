@@ -3,6 +3,7 @@ describe('Resource Query Page', () => {
     cy.visit('http://localhost:3000');
 
     cy.get('.main--container')
+      .get('form')
       .get('button')
       .first()
       .click();
@@ -16,6 +17,7 @@ describe('Resource Query Page', () => {
 
   it('Should render the resource query form', () => {
     cy.get('.main--container')
+      .get('form')
       .get('p')
       .should('contain', 'Would you like some words of encouragement or coping strategies?')
       .get('button')
@@ -26,6 +28,7 @@ describe('Resource Query Page', () => {
 
   it('Should navigate to the requested resource page for a specific emotion when an emotion is picked', () => {
     cy.get('.main--container')
+      .get('form')
       .get('button')
       .first()
       .click();
