@@ -6,15 +6,15 @@ function Form({ message, formFields, handleSubmit }) {
   console.log({formFields})
 
   const buttons = formFields.map(field => {
-    return <button type="submit" onClick={(event) => handleSubmit(event)} value={field.type} key={field.value}>{field.type}</button>
+    return <button type="submit" onClick={(event) => handleSubmit(event)} value={field.type} key={field.value}>{field.type.toUpperCase()}</button>
   });
   
   console.log({buttons})
 
   return (
     <form>
-      <p>{message}</p>
-      <div className="button--container">
+      <p className="form-message">{message}</p>
+      <div className="buttons--container">
         {buttons}
       </div>
     </form>
