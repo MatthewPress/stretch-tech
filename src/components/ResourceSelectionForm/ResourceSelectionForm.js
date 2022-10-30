@@ -1,9 +1,9 @@
 // import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './ResourceQueryForm.css';
+import './ResourceSelectionForm.css';
 
-function ResourceQueryForm({ message, formFields, handleSubmit, userEmotion }) {
+function ResourceSelectionForm({ message, formFields, handleSubmit, userEmotion }) {
 
   const buttons = formFields.map(field => {
     return (
@@ -33,4 +33,4 @@ function ResourceQueryForm({ message, formFields, handleSubmit, userEmotion }) {
   )
 }
 
-export default ResourceQueryForm;
+export default ResourceSelectionForm;

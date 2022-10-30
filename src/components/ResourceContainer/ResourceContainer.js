@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './ResourceContainer.css';
 
-function ResourceContainer({ resources, handleStartAgain, userEmotion, requestedResource }) {
+function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedResource }) {
   console.log({resources})
   return (
     <article className="resource--container">
@@ -15,7 +15,7 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, requested
             START AGAIN
           </button>
         </Link>
-        <Link to={`/${userEmotion}/${requestedResource}/addition`}>
+        <Link to={`/${userEmotion.type}/${selectedResource.type}/addition`}>
           <button className="resource--button" onClick={() => handleStartAgain()}>
             ADD A MESSAGE
           </button>

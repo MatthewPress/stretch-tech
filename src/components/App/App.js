@@ -7,7 +7,7 @@ import resourcesData from '../../testData/resourcesData';
 
 import Header from '../Header/Header';
 import Form from '../Form/Form';
-import ResourceQueryForm from '../ResourceQueryForm/ResourceQueryForm';
+import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
 import ResourceContainer from '../ResourceContainer/ResourceContainer';
 
 import { getData } from '../../apiCalls/apiCalls';
@@ -17,7 +17,7 @@ import './App.css';
 function App() {
   const [emotions, setEmotions] = useState([]);
   const [userEmotion, setUserEmotion] = useState({});
-  const [requestedResource, setRequestedResource] = useState({});
+  const [selectedResource, setSelectedResource] = useState({});
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
@@ -31,8 +31,12 @@ function App() {
       })
   }, []);
 
-  const handleResourceSelection = (request) => {
-    setRequestedResource(request.id);
+  const handleEmotionSelection = (selection) => {
+    setUserEmotion(selection);
+  }
+
+  const handleResourceSelection = (selection) => {
+    setSelectedResource(selection);
     getData(resourcesData)
       .then((data) => {
         setResources(data);
@@ -45,7 +49,7 @@ function App() {
 
   const handleStartAgain = () => {
     setUserEmotion({});
-    setRequestedResource({});
+    setSelectedResource({});
   }
 
   return (
@@ -60,14 +64,14 @@ function App() {
                 <Form 
                   message="How are you feeling?" 
                   formFields={emotions} 
-                  handleSubmit={setUserEmotion}
+                  handleSubmit={handleEmotionSelection}
                 />  
               }
             />
             <Route
               exact path={`/:emotionType`}
               render={() =>
-                <ResourceQueryForm 
+                <ResourceSelectionForm 
                   message="Would you like some words of encouragement or coping strategies?" 
                   formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
                   handleSubmit={handleResourceSelection}
@@ -82,7 +86,7 @@ function App() {
                   resources={resources} 
                   handleStartAgain={handleStartAgain} 
                   userEmotion={userEmotion}
-                  requestedResource={requestedResource}
+                  selectedResource={selectedResource}
                 />
               }
             />
