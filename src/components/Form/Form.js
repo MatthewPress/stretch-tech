@@ -1,4 +1,5 @@
 // import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Form.css';
 
@@ -7,15 +8,16 @@ function Form({ message, formFields, handleSubmit }) {
 
   const buttons = formFields.map(field => {
     return (
-      <button
-        className="hvr-pulse"
-        type="submit" 
-        onClick={(event) => handleSubmit(event)} 
-        value={field.type} 
-        key={field.id}
-      >
-        {field.type.toUpperCase()}
-      </button>
+      <Link to={`/${field.type}`} key={field.id}>
+        <button
+          className="hvr-pulse"
+          type="submit" 
+          onClick={(event) => handleSubmit(event.target.value)} 
+          value={field.id} 
+        >
+          {field.type.toUpperCase()}
+        </button>
+      </Link>
     )
   });
   

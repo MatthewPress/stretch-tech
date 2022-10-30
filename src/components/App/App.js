@@ -10,15 +10,11 @@ import './App.css';
 function App() {
   const [emotions, setEmotions] = useState([]);
   const [userEmotion, setUserEmotion] = useState("");
+  const [requestedResource, setRequestedResource] = useState("");
 
   useEffect(() => {
     setEmotions(emotionsData);
   }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setUserEmotion(event.target.value);
-  }
 
   return (
     <div className="app--container">
@@ -27,13 +23,28 @@ function App() {
       </NavLink>
       <main>
         <section className="main--container">
-          <Route 
-            exact path="/"
-            render={() => 
-              <Form message="How are you feeling?" formFields={emotions} handleSubmit={handleSubmit} />  
-            }
-          />
-          {/* <QueryForm emotions={emotions} /> */}
+          <Switch>
+            <Route 
+              exact path="/"
+              render={() => 
+                <Form 
+                  message="How are you feeling?" 
+                  formFields={emotions} 
+                  handleSubmit={setUserEmotion} 
+                />  
+              }
+            />
+            <Route
+              exact path="/:emotionType"
+              render={() =>
+                <Form 
+                  message="Would you like some words of encouragement or coping strategies?" 
+                  formFields={[{ id: 1, type: "words of encouragement"}, { id: 2, type: "coping strategies"}]} 
+                  handleSubmit={setRequestedResource} 
+                />
+              } 
+            />
+          </Switch>
         </section>
       </main>
     </div>
