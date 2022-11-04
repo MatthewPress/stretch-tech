@@ -42,7 +42,6 @@ function App() {
     setSelectedResource(selection);
 
     getData(`/${selection}`)
-    // getData(resourcesData)
       .then((data) => {
         const requestedResource = data.filter(resource => resource.emotion_id === userEmotion.id)
         setResources(requestedResource);
@@ -109,7 +108,7 @@ function App() {
                     render={() =>
                       !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
-                        : <AddResourceForm />
+                        : <AddResourceForm selectedResource={selectedResource}/>
                     }
                   />
                   <Route 
