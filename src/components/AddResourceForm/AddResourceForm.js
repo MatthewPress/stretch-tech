@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import "./AddResourceForm.css"
 
-const AddResourceForm = () => {
+const AddResourceForm = ({ selectedResource }) => {
 
   const [useinput, setUserInput] = useState('');
 
@@ -11,11 +11,11 @@ const AddResourceForm = () => {
 
   return (
     <section>
-      <h2 className='call-to-action'>Please enter new (blah)</h2>
+      <h2 className='call-to-action'>Please enter new {selectedResource}</h2>
       <form className='resource-form'>
         <input
         type='text'
-        placeholder='Add resource'
+        placeholder='Enter text'
         name='resource'
         value={useinput}
         onChange={event => setUserInput(event.target.value)}
