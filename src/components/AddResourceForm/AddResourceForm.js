@@ -9,10 +9,6 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
   const [confirmationMessage, setConfirmationMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
-
-  // Need function to do post on click
-  // using postData function
-
   const addPositivity = (event) => {
     event.preventDefault()
     const path = selectedResource
