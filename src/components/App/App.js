@@ -22,10 +22,10 @@ function App() {
   const [selectedResource, setSelectedResource] = useState({});
   const [resources, setResources] = useState([]);
   const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
+  const [allResources, setAllResources] = useState([]);
 
   useEffect(() => {
     getData(`/emotions`)
-    // getData(emotionsData)
       .then((data) => {
         setEmotions(data);
       })
@@ -43,6 +43,7 @@ function App() {
 
     getData(`/${selection}`)
       .then((data) => {
+        setAllResources(data)
         const requestedResource = data.filter(resource => resource.emotion_id === userEmotion.id)
         setResources(requestedResource);
       })
@@ -108,7 +109,7 @@ function App() {
                     render={() =>
                       !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
-                        : <AddResourceForm selectedResource={selectedResource}/>
+                        : <AddResourceForm selectedResource={selectedResource} resources={resources} allResources={allResources}/>
                     }
                   />
                   <Route 
