@@ -8,7 +8,7 @@ function Form({ message, formFields, handleSubmit }) {
   const buttons = formFields.map(field => {
     return (
       <Link 
-        to={`/${field.type}`} 
+        to={`/${field.name}`} 
         key={field.id}
       >
         <button
@@ -17,7 +17,7 @@ function Form({ message, formFields, handleSubmit }) {
           onClick={() => handleSubmit(field)} 
           value={field.id}
         >
-          {field.type.toUpperCase()}
+          {field.name.toUpperCase()}
         </button>
       </Link>
     )

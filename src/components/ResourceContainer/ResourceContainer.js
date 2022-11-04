@@ -7,7 +7,7 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedR
   return (
     <article className="resource--container">
       <div className="resource-display--container">
-        <p className="resource-display">{resources[0].resourceString}</p>
+        <p className="resource-display">{resources[Math.floor(Math.random() * resources.length)].content}</p>
       </div>
       <div className="resource-button--container">
         <Link to="/">

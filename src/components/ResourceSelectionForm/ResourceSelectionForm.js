@@ -8,13 +8,13 @@ function ResourceSelectionForm({ message, formFields, handleSubmit, userEmotion 
   const buttons = formFields.map(field => {
     return (
       <Link 
-        to={`/${userEmotion.type}/${field.type}`} 
+        to={`/${userEmotion.name}/${field.type}`} 
         key={field.id}
       >
         <button
           className="hvr-pulse"
           type="submit" 
-          onClick={() => handleSubmit(field)} 
+          onClick={() => handleSubmit(field.type)} 
           value={field.id}
         >
           {field.type.toUpperCase()}

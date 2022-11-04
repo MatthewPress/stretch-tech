@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // remove when backend is available
-import emotionsData from '../../testData/emotionsData';
-import resourcesData from '../../testData/resourcesData';
+// import emotionsData from '../../testData/emotionsData';
+// import resourcesData from '../../testData/resourcesData';
 
 import Header from '../Header/Header';
 import Form from '../Form/Form';
@@ -23,8 +23,8 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
 
   useEffect(() => {
-    // getData(`/emotions`)
-    getData(emotionsData)
+    getData(`/emotions`)
+    // getData(emotionsData)
       .then((data) => {
         setEmotions(data);
       })
@@ -40,10 +40,11 @@ function App() {
   const handleResourceSelection = (selection) => {
     setSelectedResource(selection);
 
-    // getData(`/emotions/${selectedResource.type}`)
-    getData(resourcesData)
+    getData(`/${selection}`)
+    // getData(resourcesData)
       .then((data) => {
-        setResources(data);
+        const requestedResource = data.filter(resource => resource.emotion_id === userEmotion.id)
+        setResources(requestedResource);
       })
       .catch((error) => {
         setErrorMessage("Sorry, we could get our RESOURCES data. Maybe try starting again.");
@@ -81,7 +82,7 @@ function App() {
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
                         : <ResourceSelectionForm 
                             message="Would you like some words of encouragement or coping strategies?" 
-                            formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
+                            formFields={[{ id: 1, type: "quotes"}, { id: 2, type: "advice"}]} 
                             handleSubmit={handleResourceSelection}
                             userEmotion={userEmotion}
                           />
