@@ -1,15 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import "./AddResourceForm.css"
-import { postData } from "../../apiCalls"
+import { postData } from "../../apiCalls/apiCalls"
 
-const AddResourceForm = ({ selectedResource }) => {
+const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
-  const [useinput, setUserInput] = useState('');
+  const [userInput, setUserInput] = useState('');
+  const [confirmationMessage, setConfirmationMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
 
   // Need function to do post on click
   // using postData function
+
+  const addPositivity = (event) => {
+    event.preventDefault()
+    const path = selectedResource
+    const idNum = allResources.length +1
+    const emotionID = resources[0].emotion_id
+    const positivity = {
+      "id": idNum,
+      "emotion_id": emotionID,
+      "content": userInput
+    }
+
+    postData(`/${path}`, idNum, positivity)
+    .catch((error) => {
+      if(error) {
+        setErrorMessage(`Sorry, a ${error} has error occured. Please try again.`);
+      } else {
+        setConfirmationMessage(`New ${selectedResource} added!`)
+      }
+    })
+    clearInput()
+  }
+
+  const clearInput = () => {
+    setUserInput('')
+  }
 
   return (
     <section>
@@ -19,10 +47,11 @@ const AddResourceForm = ({ selectedResource }) => {
         type='text'
         placeholder='Enter text'
         name='resource'
-        value={useinput}
+        value={userInput}
         onChange={event => setUserInput(event.target.value)}
         />
-        <button className='submit-button'>Submit</button>
+        {errorMessage ? <p>{errorMessage}</p> : <p>{confirmationMessage}</p>}
+        <button className='submit-button' onClick={(event) => addPositivity(event) }>Submit</button>
         <Link to='/'>
           <button className='home-button'>Start Again</button>
         </Link>
