@@ -3,14 +3,20 @@ input {
   width: 20rem;
 }
 
+.call-to-action {
+  text-align: center;
+  font-size: 4rem;
+}
+
 .resource-form {
  display:flex;
  flex-direction: column;
  align-items: center;
- margin-top: 10rem;
+ margin-top: 5rem;
 }
 
-.submit-button {
+.submit-button,
+.home-button {
   color: #FFFFFF;
   font-weight: bold;
   letter-spacing: 2.5px;
@@ -21,4 +27,9 @@ input {
   border-radius: 10px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
   margin: 2%;
+}
+
+.submit-button:hover,
+.home-button:hover {
+  cursor: pointer;
 }
