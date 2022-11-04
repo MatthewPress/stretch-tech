@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import "./AddResourceForm.css"
+import { postData } from "../../apiCalls"
 
 const AddResourceForm = ({ selectedResource }) => {
 
   const [useinput, setUserInput] = useState('');
 
 
- 
+  // Need function to do post on click
+  // using postData function
 
   return (
     <section>
