@@ -1,0 +1,24 @@
+input {
+  height: 3rem;
+  width: 20rem;
+}
+
+.resource-form {
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 10rem;
+}
+
+.submit-button {
+  color: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  background-color:rgb(56, 3, 106);
+  height: 4rem;
+  width: 10rem;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  margin: 2%;
+}
