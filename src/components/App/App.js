@@ -10,6 +10,7 @@ import Form from '../Form/Form';
 import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
 import ResourceContainer from '../ResourceContainer/ResourceContainer';
 import ErrorContainer from '../ErrorContainer/ErrorContainer';
+import AddResourceForm from '../AddResourceForm/AddResourceForm'
 
 import { getData } from '../../apiCalls/apiCalls';
 
@@ -108,7 +109,7 @@ function App() {
                     render={() =>
                       !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
-                        : <p>Add Message</p>
+                        : <AddResourceForm />
                     }
                   />
                   <Route 
