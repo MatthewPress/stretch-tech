@@ -6,8 +6,8 @@ import { postData } from "../../apiCalls/apiCalls"
 const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
   const [userInput, setUserInput] = useState('');
-  const [confirmationMessage, setConfirmationMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [confirmationMessage, setConfirmationMesage] = useState('')
 
   const addPositivity = (event) => {
     event.preventDefault()
@@ -19,21 +19,24 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
       "emotion_id": emotionID,
       "content": userInput
     }
-
     postData(`/${path}`, idNum, positivity)
     .catch((error) => {
-      if(error) {
         setErrorMessage(`Sorry, a ${error} has error occured. Please try again.`);
-      } else {
-        setConfirmationMessage(`New ${selectedResource} added!`)
-      }
     })
+    confirmationSetter()
     clearInput()
   }
 
   const clearInput = () => {
     setUserInput('')
   }
+
+  const confirmationSetter = () => {
+    if(!errorMessage) {
+      setConfirmationMesage(`New ${selectedResource} added!`)
+    }
+  }
+
 
   return (
     <section>
@@ -46,7 +49,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
         value={userInput}
         onChange={event => setUserInput(event.target.value)}
         />
-        {errorMessage ? <p>{errorMessage}</p> : <p>{confirmationMessage}</p>}
+        { errorMessage ? <p>{errorMessage}</p> : <p>{confirmationMessage}</p> }
         <button className='submit-button' onClick={(event) => addPositivity(event) }>Submit</button>
         <Link to='/'>
           <button className='home-button'>Start Again</button>
