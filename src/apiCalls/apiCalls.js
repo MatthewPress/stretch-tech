@@ -13,11 +13,11 @@ const getData = async (path) => {
   }
 }
 
-const postData = async (path, idNum, userString) => {
+const postData = async (path, idNum, positivity) => {
   try {
     const response = await fetch(`http://localhost:3003/api/v1${path}`, {
       method: 'POST',
-      body: JSON.stringify(userString),
+      body: JSON.stringify(positivity),
       headers: {
         'Content-Type': 'application/json'
       }
