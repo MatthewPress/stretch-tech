@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // remove when backend is available
-import emotionsData from '../../testData/emotionsData';
-import resourcesData from '../../testData/resourcesData';
+// import emotionsData from '../../testData/emotionsData';
+// import resourcesData from '../../testData/resourcesData';
 
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
 import ResourceContainer from '../ResourceContainer/ResourceContainer';
 import ErrorContainer from '../ErrorContainer/ErrorContainer';
+import AddResourceForm from '../AddResourceForm/AddResourceForm'
 
 import { getData } from '../../apiCalls/apiCalls';
 
@@ -21,10 +22,10 @@ function App() {
   const [selectedResource, setSelectedResource] = useState({});
   const [resources, setResources] = useState([]);
   const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
+  const [allResources, setAllResources] = useState([]);
 
   useEffect(() => {
-    // getData(`/emotions`)
-    getData(emotionsData)
+    getData(`/emotions`)
       .then((data) => {
         setEmotions(data);
       })
@@ -40,10 +41,11 @@ function App() {
   const handleResourceSelection = (selection) => {
     setSelectedResource(selection);
 
-    // getData(`/emotions/${selectedResource.type}`)
-    getData(resourcesData)
+    getData(`/${selection}`)
       .then((data) => {
-        setResources(data);
+        setAllResources(data)
+        const requestedResource = data.filter(resource => resource.emotion_id === userEmotion.id)
+        setResources(requestedResource);
       })
       .catch((error) => {
         setErrorMessage("Sorry, we could get our RESOURCES data. Maybe try starting again.");
@@ -81,7 +83,7 @@ function App() {
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
                         : <ResourceSelectionForm 
                             message="Would you like some words of encouragement or coping strategies?" 
-                            formFields={[{ id: 1, type: "words"}, { id: 2, type: "strategies"}]} 
+                            formFields={[{ id: 1, type: "quotes"}, { id: 2, type: "advice"}]} 
                             handleSubmit={handleResourceSelection}
                             userEmotion={userEmotion}
                           />
@@ -107,7 +109,7 @@ function App() {
                     render={() =>
                       !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
-                        : <p>Add Message</p>
+                        : <AddResourceForm selectedResource={selectedResource} resources={resources} allResources={allResources}/>
                     }
                   />
                   <Route 
