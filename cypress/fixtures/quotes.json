@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "emotion_id": 1,
+    "content": "Anger makes you smaller, while forgiveness forces you to grow beyond what you were.",
+    "created_at": "2022-11-05T01:09:25.055Z",
+    "updated_at": "2022-11-05T01:09:25.055Z"
+  },
+  {
+    "id": 2,
+    "emotion_id": 1,
+    "content": "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering",
+    "created_at": "2022-11-05T01:09:25.055Z",
+    "updated_at": "2022-11-05T01:09:25.055Z"
+  },
+
+  {
+    "id": 6,
+    "emotion_id": 2,
+    "content": "It's not the events of our lives that shape us, but our beliefs as to what those events mean.",
+    "created_at": "2022-11-05T01:09:25.055Z",
+    "updated_at": "2022-11-05T01:09:25.055Z"
+  },
+  {
+    "id": 7,
+    "emotion_id": 2,
+    "content": "You can't always control what goes on outside, but you can always control what goes on inside.",
+    "created_at": "2022-11-05T01:09:25.055Z",
+    "updated_at": "2022-11-05T01:09:25.055Z"
+  }
+]

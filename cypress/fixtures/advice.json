@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "emotion_id": 1,
+    "content": "Think before you speak. Take a few moments to collect your thoughts before saying anything.",
+    "created_at": "2022-11-05T01:09:25.039Z",
+    "updated_at": "2022-11-05T01:09:25.039Z"
+  },
+  {
+    "id": 2,
+    "emotion_id": 1,
+    "content": "Step away from the situation and come back when you're calm.",
+    "created_at": "2022-11-05T01:09:25.039Z",
+    "updated_at": "2022-11-05T01:09:25.039Z"
+  },
+  {
+    "id": 6,
+    "emotion_id": 2,
+    "content": "Get moving! Daily exercise naturally produces stress-relieving hormones in your body and improves your overall health.",
+    "created_at": "2022-11-05T01:09:25.039Z",
+    "updated_at": "2022-11-05T01:09:25.039Z"
+  },
+  {
+    "id": 7,
+    "emotion_id": 2,
+    "content": "Get restful sleep. Sleeping problems are common when you're stressed out so make sure you get enough rest.",
+    "created_at": "2022-11-05T01:09:25.039Z",
+    "updated_at": "2022-11-05T01:09:25.039Z"
+  }
+]
