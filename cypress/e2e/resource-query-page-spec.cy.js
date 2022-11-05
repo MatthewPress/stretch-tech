@@ -1,12 +1,17 @@
 describe('Resource Query Page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
 
-    cy.get('.main--container')
-      .get('form')
-      .get('button')
-      .first()
-      .click();
+  cy.intercept('GET', 'https://salty-sea-12550.herokuapp.com/api/v1/emotions', {
+    fixture:'emotions.json'
+  }).as('emotions')
+
+  cy.visit('http://localhost:3000');
+
+  cy.get('.main--container')
+    .get('form')
+    .get('button').first().contains('ANGER')
+    .click()
+    .url().should('eq', 'http://localhost:3000/anger')
   })
   
   it('Should render a header', () => {
@@ -23,16 +28,14 @@ describe('Resource Query Page', () => {
       .get('button')
       .should('have.length', '2')
       .first()
-      .should('contain', 'WORDS');
+      .should('contain', 'QUOTES');
   });
 
-  it('Should navigate to the requested resource page for a specific emotion when an emotion is picked', () => {
+  it('Should navigate to the requested resource page for a specific emotion when a resource is picked', () => {
     cy.get('.main--container')
       .get('form')
-      .get('button')
-      .first()
-      .click();
-
-    cy.url('should.be', 'http://localhost:3000/anger/words');
+      .get('button').first().click()
+      .url().should('eq', 'http://localhost:3000/anger/quotes')
   });
+
 })
