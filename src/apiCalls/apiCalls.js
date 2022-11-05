@@ -1,7 +1,7 @@
 
 const getData = async (path) => {
   try {
-    const response = await fetch(`http://localhost:3003/api/v1${path}`);
+    const response = await fetch(`https://salty-sea-12550.herokuapp.com/api/v1${path}`);
     if(!response.ok) {
       throw new Error();
     } else {
@@ -15,7 +15,7 @@ const getData = async (path) => {
 
 const postData = async (path, idNum, positivity) => {
   try {
-    const response = await fetch(`http://localhost:3003/api/v1${path}`, {
+    const response = await fetch(`https://salty-sea-12550.herokuapp.com/api/v1${path}`, {
       method: 'POST',
       body: JSON.stringify(positivity),
       headers: {
