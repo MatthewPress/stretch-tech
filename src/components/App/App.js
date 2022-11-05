@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// remove when backend is available
-// import emotionsData from '../../testData/emotionsData';
-// import resourcesData from '../../testData/resourcesData';
-
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
@@ -30,7 +26,7 @@ function App() {
         setEmotions(data);
       })
       .catch((error) => {
-        setErrorMessage("Sorry, we could get our EMOTIONS data. Maybe try starting again.");
+        setErrorMessage("Sorry, we couldn't get our EMOTIONS data. Maybe try starting again.");
       })
   }, []);
 
@@ -48,7 +44,7 @@ function App() {
         setResources(requestedResource);
       })
       .catch((error) => {
-        setErrorMessage("Sorry, we could get our RESOURCES data. Maybe try starting again.");
+        setErrorMessage("Sorry, we couldn't get our RESOURCES data. Maybe try starting again.");
       })
   }
 
