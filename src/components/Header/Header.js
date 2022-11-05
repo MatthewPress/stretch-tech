@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 import logo from '../../assets/1200px-ghost-logo.svg.png';
 
@@ -16,3 +17,7 @@ function Header({ handleStartAgain }) {
 }
 
 export default Header;
+
+Header.prototypes = {
+  handleStartAgain: PropTypes.func.isRequired
+}

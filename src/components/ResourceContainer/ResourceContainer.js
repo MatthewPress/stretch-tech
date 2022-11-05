@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 import './ResourceContainer.css';
 
@@ -25,3 +26,16 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedR
 }
 
 export default ResourceContainer;
+
+ResourceContainer.prototypes = {
+  resources: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleStartAgain: PropTypes.func.isRequired, 
+  userEmotion: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    created_at: PropTypes.string,
+    updated_at:PropTypes.string,
+  }).isRequired,
+  selectedResource: PropTypes.string.isRequired,
+
+}
