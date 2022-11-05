@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 import './ErrorContainer.css';
@@ -20,3 +21,8 @@ function ErrorContainer({ errorMessage, handleStartAgain }) {
 }
 
 export default ErrorContainer;
+
+ErrorContainer.prototypes = {
+  errorMessage: PropTypes.string.isRequired,
+  handleStartAgain: PropTypes.func.isRequired,
+}
