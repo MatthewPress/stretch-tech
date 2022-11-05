@@ -19,7 +19,7 @@ describe('Resource Page', () => {
       .click().wait(1000);
   });
   
-  it.skip('Should render a header', () => {
+  it('Should render a header', () => {
     cy.get('Header')
       .should('be.visible')
       .should('contain', 'Cheers For Fears')
@@ -37,7 +37,7 @@ describe('Resource Page', () => {
       }).as('content')
   });
 
-  it.skip('Should take the user back to the landing page when the start again button is pressed', () => {
+  it('Should take the user back to the landing page when the start again button is pressed', () => {
     cy.get('.main--container')
       .get('button')
       .first()
@@ -46,7 +46,7 @@ describe('Resource Page', () => {
     cy.url('should.be', 'http://localhost:3000');
   });
 
-  it.skip('Should take the user back to the add resource page when the add message button is clicked', () => {
+  it('Should take the user back to the add resource page when the add message button is clicked', () => {
     cy.get('.main--container')
       .get('button[name="addMessage"]')
       .click();
