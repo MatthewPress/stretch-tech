@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/stretch-tech/static/css/main.337bf766.css",
+    "main.js": "/stretch-tech/static/js/main.e8b063cb.js",
+    "static/media/1200px-ghost-logo.svg.png": "/stretch-tech/static/media/1200px-ghost-logo.svg.ebb95ccf658ede98ab9b.png",
+    "index.html": "/stretch-tech/index.html",
+    "main.337bf766.css.map": "/stretch-tech/static/css/main.337bf766.css.map",
+    "main.e8b063cb.js.map": "/stretch-tech/static/js/main.e8b063cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.337bf766.css",
+    "static/js/main.e8b063cb.js"
+  ]
+}
