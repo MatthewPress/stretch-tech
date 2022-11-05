@@ -1,5 +1,8 @@
 describe('Landing Page', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://salty-sea-12550.herokuapp.com/api/v1/emotions', {
+      fixture:'emotions.json'
+    }).as('emotions')
     cy.visit('http://localhost:3000/');
   });
 
@@ -14,7 +17,7 @@ describe('Landing Page', () => {
       .get('p')
       .should('contain', 'How are you feeling?')
       .get('button')
-      .should('have.length', '5')
+      .should('have.length', '2')
       .first()
       .should('contain', 'ANGER');
   });
