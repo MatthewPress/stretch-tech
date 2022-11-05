@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import "./AddResourceForm.css"
 import { postData } from "../../apiCalls/apiCalls"
@@ -7,7 +8,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
   const [userInput, setUserInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('')
-  const [confirmationMessage, setConfirmationMesage] = useState('')
+  const [confirmationMessage, setConfirmationMessage] = useState('')
 
   const addPositivity = (event) => {
     event.preventDefault()
@@ -21,7 +22,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
     }
     postData(`/${path}`, idNum, positivity)
     .catch((error) => {
-        setErrorMessage(`Sorry, a ${error} has error occured. Please try again.`);
+        setErrorMessage(`Sorry, a ${error} has error occurred. Please try again.`);
     })
     confirmationSetter()
     clearInput()
@@ -33,7 +34,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
   const confirmationSetter = () => {
     if(!errorMessage) {
-      setConfirmationMesage(`New ${selectedResource} added!`)
+      setConfirmationMessage(`New ${selectedResource} added!`)
     }
   }
 
@@ -60,3 +61,9 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 }
 
 export default AddResourceForm
+
+AddResourceForm.propTypes = {
+  selectedResource: PropTypes.string.isRequired,
+  resources: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allResources: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
