@@ -67,7 +67,7 @@ function App() {
               ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
               : <Switch>
                   <Route 
-                    exact path="/"
+                    exact path="/stretch-tech"
                     render={() => 
                       <Form 
                         message="How are you feeling?" 
@@ -77,7 +77,7 @@ function App() {
                     }
                   />
                   <Route
-                    exact path={`/:emotionType`}
+                    exact path={`/stretch-tech/:emotionType`}
                     render={() =>
                       !Object.keys(userEmotion).length 
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} />
@@ -91,7 +91,7 @@ function App() {
                     } 
                   />
                   <Route 
-                    exact path={`/:emotionType/:resourceType`}
+                    exact path={`/stretch-tech/:emotionType/:resourceType`}
                     render={() => 
                       !resources.length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
@@ -105,7 +105,7 @@ function App() {
                     }
                   />
                   <Route
-                    exact path={`/:emotionType/:resourceType/addition`} 
+                    exact path={`/stretch-tech/:emotionType/:resourceType/addition`} 
                     render={() =>
                       !Object.keys(userEmotion).length && !Object.keys(selectedResource).length
                         ? <ErrorContainer errorMessage={errorMessage} handleStartAgain={handleStartAgain} /> 
