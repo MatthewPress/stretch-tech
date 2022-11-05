@@ -2,6 +2,10 @@
   "name": "stretch-tech",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "git+https://github.com/MatthewPress/stretch-tech.git"
+  },
+  "homepage": "http://MatthewPress.github.io/stretch-tech",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "cypress": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.11.0"
+    "cypress": "^10.11.0",
+    "gh-pages": "^4.0.0"
   }
 }
