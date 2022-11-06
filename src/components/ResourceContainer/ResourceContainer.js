@@ -10,14 +10,14 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedR
         <p className="resource-display">{resources[Math.floor(Math.random() * resources.length)].content}</p>
       </div>
       <div className="resource-button--container">
-        <Link to="/">
-          <button className="resource--button" onClick={() => handleStartAgain()}>
-            START AGAIN
-          </button>
-        </Link>
         <Link to={`/${userEmotion.name}/${selectedResource}/addition`}>
           <button className="resource--button" name="addMessage">
             ADD A MESSAGE
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="resource--button" onClick={() => handleStartAgain()}>
+            START AGAIN
           </button>
         </Link>
       </div>
