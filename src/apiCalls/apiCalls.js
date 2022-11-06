@@ -13,24 +13,21 @@ const getData = async (path) => {
   }
 }
 
-const postData = async (path, idNum, positivity) => {
-  try {
-    const response = await fetch(`https://salty-sea-12550.herokuapp.com/api/v1${path}`, {
-      method: 'POST',
-      body: JSON.stringify(positivity),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    if(!response.ok) {
-      throw new Error();
-    } else {
-      const data = await response.json();
-      return data;
+const postData = (path, idNum, positivity) => {
+  return fetch(`https://salty-sea-12550.herokuapp.com/api/v1${path}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(positivity)
+  })
+  .then((resp) => {
+    if (!resp.ok) {
+      throw new Error(resp.statusText)
     }
-  } catch(error) {
-    return error;
-  }
+    console.log(resp)
+    return resp.json()
+  })
 }
 
 export {
