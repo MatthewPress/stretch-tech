@@ -41,20 +41,22 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
   return (
     <section>
-      <h2 className='call-to-action'>Please enter new {selectedResource}</h2>
+      <p className='call-to-action'>Please add your own message</p>
       <form className='resource-form'>
         <input
         type='text'
-        placeholder='Enter text'
+        placeholder='Type your message here'
         name='resource'
         value={userInput}
         onChange={event => setUserInput(event.target.value)}
         />
         { errorMessage ? <p>{errorMessage}</p> : <p>{confirmationMessage}</p> }
-        <button className='submit-button' onClick={(event) => addPositivity(event) }>Submit</button>
-        <Link to='/'>
-          <button className='home-button'>Start Again</button>
-        </Link>
+        <div className='resource-button--container'>
+          <button className='resource--button submit' onClick={(event) => addPositivity(event) }>SUBMIT</button>
+          <Link to='/'>
+            <button className='resource--button'>START AGAIN</button>
+          </Link>
+        </div>
       </form>
     </section>
   )
