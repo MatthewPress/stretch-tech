@@ -21,8 +21,20 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
       "content": userInput
     }
     postData(`/${path}`, idNum, positivity)
+    // .then(data => console.log("Data from post?", data))
+    // .then(data => {
+    //   if(data) {
+    //     console.log(data)
+    //   } else {
+    //     console.log("No workie")
+    //   }
+    //   // console.log("Data from post?", data))
+    // })
+
+
     .catch((error) => {
         setErrorMessage(`Sorry, a ${error} has error occurred. Please try again.`);
+        console.log("AddResurce Catch", error)
     })
     confirmationSetter()
     clearInput()
@@ -49,6 +61,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
         name='resource'
         value={userInput}
         onChange={event => setUserInput(event.target.value)}
+        required
         />
         { errorMessage ? <p>{errorMessage}</p> : <p>{confirmationMessage}</p> }
         <div className='resource-button--container'>
