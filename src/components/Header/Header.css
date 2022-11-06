@@ -7,8 +7,9 @@ header {
 }
 
 img {
-  height: 2rem;
+  height: 4rem;
   margin-right: 10px;
+  border-radius: 2px;
 }
 
 a {

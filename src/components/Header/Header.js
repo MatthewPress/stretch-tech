@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
-import logo from '../../assets/1200px-ghost-logo.svg.png';
+import logo from '../../assets/emotions_monster.png';
 
 import './Header.css';
 
