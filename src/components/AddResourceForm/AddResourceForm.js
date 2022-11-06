@@ -41,7 +41,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
   return (
     <section>
-      <p className='call-to-action'>Please add your own message</p>
+      <p className='call-to-action'>{`Please add your own message to our ${selectedResource}`}</p>
       <form className='resource-form'>
         <input
         type='text'
