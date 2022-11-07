@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/MatthewPress/stretch-tech">
+    <img src="./src/assets/emotions_monster.png" alt="Logo" width="80" height="80">
+  </a>
+  <p>Artwork by <a href="https://www.zestydoesthings.com/realmonsters" target="_blank" rel="noopener noreferrer">Toby Allen</a>.</p>
 
-## Available Scripts
+<!-- HEADER -->
+  <h3 align="center">Cheers for Fears</h3>
+  <p align="center">
+    An application for emotional wellness
+    <br />
+    <a href="https://github.com/MatthewPress/stretch-tech"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://stretch-tech.vercel.app/"><strong>Visit the Deployed Site »</strong></a>
+  </p>
+</div>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Cheers for Fears Demo][product-demo]](https://user-images.githubusercontent.com/28677929/200193812-378cbc7c-d161-47c3-8672-cf870263ee58.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is a web application built to provide words of encouragement and coping strategies, when dealing with various adverse feelings. It was created for the Turing School of Software and Design's Module 3 stretch-tech group project. The overall goal was to learn and implement a new technology, in a collaborative space.
 
-### `npm test`
+The project specs can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `npm run build`
+* ![React][React-shield]
+* ![React Router][React-Router-shield]
+* ![JavaScript][JavaScript-shield]
+* ![CSS][CSS-shield]
+* ![Cypress][Cypress-shield]
+* ![Express.js][Express-shield]
+* ![Postgres][Postgres-shield]
+* ![Heroku][Heroku-shield]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
+- Visit the [deployed site](https://stretch-tech.vercel.app/)
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![Demo][product-demo]](https://user-images.githubusercontent.com/28677929/200193812-378cbc7c-d161-47c3-8672-cf870263ee58.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes
+ We were tasked with learning how to create a full stack application, which includes an Express.js server and PostgreSQL database backend. This project was completed within a week long sprint. It was rewarding to see this project come together!
 
-## Learn More
+### Feature overview
+- React framework with Hooks
+- React Router
+- Express.js server with Knex
+- Connection with PostgreSQL Database
+- Testing with Cypress
+- Typechecking with PropTypes
+- Deployment on Vercel and Heroku
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Wins:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Deploying this app was a big win!
+* Connecting the Front End with the Back End was very rewarding!
 
-### Code Splitting
+### Challenges:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Learning Backend technologies
+* Cypress testing with POST
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Roadmap
 
-### Making a Progressive Web App
+- [ ] User login
+- [ ] More words of encouragement and coping strategies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Stephanie Guzman | [![LinkedIn][linkedin-shield]][linkedin-url3] | [![GMail][gmail-shield]][gmail-url3]
 
-### Deployment
+Ali Nix | [![LinkedIn][linkedin-shield]][linkedin-url2] | [![GMail][gmail-shield]][gmail-url2]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Matthew Press | [![LinkedIn][linkedin-shield]][linkedin-url] | [![GMail][gmail-shield]][gmail-url]
 
-### `npm run build` fails to minify
+Anthony Shellman | [![LinkedIn][linkedin-shield]][linkedin-url4] | [![GMail][gmail-shield]][gmail-url4]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[product-demo]: https://user-images.githubusercontent.com/28677929/200193812-378cbc7c-d161-47c3-8672-cf870263ee58.gif
+
+[React-shield]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[React-Router-shield]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[JavaScript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[CSS-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[Cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
+[Express-shield]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[Heroku-shield]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
+
+
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/matthew-press-813961246/
+[linkedin-url2]: https://www.linkedin.com/in/ali-nix-38b9b9126/
+[linkedin-url3]: https://www.linkedin.com/in/stephanie-guzman-sdsw/
+[linkedin-url4]: https://www.linkedin.com/in/anthonyshellman/
+[gmail-shield]: https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-url]: mailto:press.matt14@gmail.com
+[gmail-url2]: mailto:anix1@kent.edu
+[gmail-url3]: mailto:sguzman247@gmail.com
+[gmail-url4]: mailto:atshellman@gmail.com
