@@ -4,26 +4,26 @@ describe('Resource Page', () => {
       fixture: 'emotions.json'
     }).as('emotions')
 
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000')
 
     cy.get('.main--container')
       .get('form')  
       .get('button')
       .first()
-      .click();
+      .click()
 
     cy.get('.main--container')
       .get('form')
       .get('button')
       .first()
-      .click().wait(1000);
-  });
+      .click().wait(1000)
+  })
   
   it('Should render a header', () => {
     cy.get('Header')
       .should('be.visible')
       .should('contain', 'Cheers For Fears')
-  });
+  })
 
   it('Should be able to post a message', () => {
     cy.intercept('POST', 'https://salty-sea-12550.herokuapp.com/api/v1/quotes', {
@@ -40,7 +40,7 @@ describe('Resource Page', () => {
       .get('form').get('input[name="resource"]').type('This is a test')
       .get('.submit').click()
       .get('p').contains('New quotes added!')
-  });
+  })
 
   it('Should get an error if post is unsuccessful', () => {
     cy.intercept('POST', 'https://salty-sea-12550.herokuapp.com/api/v1/quotes', {
@@ -55,6 +55,6 @@ describe('Resource Page', () => {
       .get('form').get('input[name="resource"]').type('This is a test')
       .get('.submit').click()
       .get('p').contains('Sorry an error has occurred. Please try again.')
-  });
+  })
 
 })

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
-
-import './Form.css';
+import { Link } from 'react-router-dom'
+import './Form.css'
 
 function Form({ message, formFields, handleSubmit }) {
 
@@ -21,7 +20,7 @@ function Form({ message, formFields, handleSubmit }) {
         </button>
       </Link>
     )
-  });
+  })
 
   return (
     <form>
@@ -33,7 +32,7 @@ function Form({ message, formFields, handleSubmit }) {
   )
 }
 
-export default Form;
+export default Form
 
 Form.prototypes = {
   message: PropTypes.string.isRequired, 

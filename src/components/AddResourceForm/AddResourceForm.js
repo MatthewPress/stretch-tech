@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import "./AddResourceForm.css"
@@ -6,7 +6,7 @@ import { postData } from "../../apiCalls/apiCalls"
 
 const AddResourceForm = ({ selectedResource, resources, allResources }) => {
 
-  const [userInput, setUserInput] = useState('');
+  const [userInput, setUserInput] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [confirmationMessage, setConfirmationMessage] = useState('')
 
@@ -22,8 +22,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
     }
     postData(`/${path}`, idNum, positivity)
     .catch((error) => {
-        setErrorMessage('Sorry an error has occurred. Please try again.');
-        console.log("AddResurce Catch", error)
+        setErrorMessage('Sorry an error has occurred. Please try again.')
     })
     confirmationSetter()
     clearInput()
@@ -38,7 +37,6 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
       setConfirmationMessage(`New ${selectedResource} added!`)
     }
   }
-
 
   return (
     <section>

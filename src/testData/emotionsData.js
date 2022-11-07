@@ -21,4 +21,4 @@ const emotionsData = [
   }
 ];
 
-export default emotionsData;
+export default emotionsData

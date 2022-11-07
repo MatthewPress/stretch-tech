@@ -5,7 +5,7 @@ describe('Resource Query Page', () => {
     fixture:'emotions.json'
   }).as('emotions')
 
-  cy.visit('http://localhost:3000');
+  cy.visit('http://localhost:3000')
 
   cy.get('.main--container')
     .get('form')
@@ -18,7 +18,7 @@ describe('Resource Query Page', () => {
     cy.get('Header')
       .should('be.visible')
       .should('contain', 'Cheers For Fears')
-  });
+  })
 
   it('Should render the resource query form', () => {
     cy.get('.main--container')
@@ -28,14 +28,14 @@ describe('Resource Query Page', () => {
       .get('button')
       .should('have.length', '2')
       .first()
-      .should('contain', 'QUOTES');
-  });
+      .should('contain', 'QUOTES')
+  })
 
   it('Should navigate to the requested resource page for a specific emotion when a resource is picked', () => {
     cy.get('.main--container')
       .get('form')
       .get('button').first().click()
       .url().should('eq', 'http://localhost:3000/anger/quotes')
-  });
+  })
 
 })

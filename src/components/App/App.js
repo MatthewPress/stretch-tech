@@ -1,56 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import Header from '../Header/Header';
-import Form from '../Form/Form';
-import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm';
-import ResourceContainer from '../ResourceContainer/ResourceContainer';
-import ErrorContainer from '../ErrorContainer/ErrorContainer';
+import React, { useState, useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { getData } from '../../apiCalls/apiCalls'
+import Header from '../Header/Header'
+import Form from '../Form/Form'
+import ResourceSelectionForm from '../ResourceSelectionForm/ResourceSelectionForm'
+import ResourceContainer from '../ResourceContainer/ResourceContainer'
+import ErrorContainer from '../ErrorContainer/ErrorContainer'
 import AddResourceForm from '../AddResourceForm/AddResourceForm'
-
-import { getData } from '../../apiCalls/apiCalls';
-
-import './App.css';
+import './App.css'
 
 function App() {
-  const [emotions, setEmotions] = useState([]);
-  const [userEmotion, setUserEmotion] = useState({});
-  const [selectedResource, setSelectedResource] = useState({});
-  const [resources, setResources] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?");
-  const [allResources, setAllResources] = useState([]);
+  const [emotions, setEmotions] = useState([])
+  const [userEmotion, setUserEmotion] = useState({})
+  const [selectedResource, setSelectedResource] = useState({})
+  const [resources, setResources] = useState([])
+  const [errorMessage, setErrorMessage] = useState("404: Why not start at the beginning?")
+  const [allResources, setAllResources] = useState([])
 
   useEffect(() => {
     getData(`/emotions`)
       .then((data) => {
-        setEmotions(data);
+        setEmotions(data)
       })
       .catch((error) => {
-        setErrorMessage("Sorry, we couldn't get our EMOTIONS data. Maybe try starting again.");
+        setErrorMessage("Sorry, we couldn't get our EMOTIONS data. Maybe try starting again.")
       })
-  }, []);
+  }, [])
 
   const handleEmotionSelection = (selection) => {
-    setUserEmotion(selection);
+    setUserEmotion(selection)
   }
 
   const handleResourceSelection = (selection) => {
-    setSelectedResource(selection);
+    setSelectedResource(selection)
 
     getData(`/${selection}`)
       .then((data) => {
         setAllResources(data)
         const requestedResource = data.filter(resource => resource.emotion_id === userEmotion.id)
-        setResources(requestedResource);
+        setResources(requestedResource)
       })
       .catch((error) => {
-        setErrorMessage("Sorry, we couldn't get our RESOURCES data. Maybe try starting again.");
+        setErrorMessage("Sorry, we couldn't get our RESOURCES data. Maybe try starting again.")
       })
   }
 
   const handleStartAgain = () => {
-    setUserEmotion({});
-    setSelectedResource({});
+    setUserEmotion({})
+    setSelectedResource({})
   }
 
   return (
@@ -83,7 +80,6 @@ function App() {
                             handleSubmit={handleResourceSelection}
                             userEmotion={userEmotion}
                           />
-                      
                     } 
                   />
                   <Route 
@@ -97,7 +93,6 @@ function App() {
                             userEmotion={userEmotion}
                             selectedResource={selectedResource}
                           />
-                    
                     }
                   />
                   <Route
@@ -118,7 +113,7 @@ function App() {
         </section>
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
