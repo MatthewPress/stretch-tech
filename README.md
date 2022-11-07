@@ -117,7 +117,6 @@ Anthony Shellman | [![LinkedIn][linkedin-shield]][linkedin-url4] | [![GMail][gma
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-demo]: https://user-images.githubusercontent.com/28677929/200193812-378cbc7c-d161-47c3-8672-cf870263ee58.gif
-
 [React-shield]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
 [React-Router-shield]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
 [JavaScript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
@@ -125,6 +124,7 @@ Anthony Shellman | [![LinkedIn][linkedin-shield]][linkedin-url4] | [![GMail][gma
 [Cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
 [Express-shield]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
 [Heroku-shield]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
+[Postgres-shield]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 
 
 
