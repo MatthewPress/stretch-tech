@@ -22,7 +22,7 @@ const AddResourceForm = ({ selectedResource, resources, allResources }) => {
     }
     postData(`/${path}`, idNum, positivity)
     .catch((error) => {
-        setErrorMessage(`Sorry, a ${error} has error occurred. Please try again.`);
+        setErrorMessage('Sorry an error has occurred. Please try again.');
         console.log("AddResurce Catch", error)
     })
     confirmationSetter()
