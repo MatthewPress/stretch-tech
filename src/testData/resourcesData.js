@@ -7,4 +7,4 @@ const resourcesData = [
   }
 ];
 
-export default resourcesData;
+export default resourcesData

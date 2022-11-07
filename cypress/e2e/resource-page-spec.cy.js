@@ -4,26 +4,26 @@ describe('Resource Page', () => {
       fixture: 'emotions.json'
     }).as('emotions')
 
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000')
 
     cy.get('.main--container')
       .get('form')  
       .get('button')
       .first()
-      .click();
+      .click()
 
     cy.get('.main--container')
       .get('form')
       .get('button')
       .first()
-      .click().wait(1000);
-  });
+      .click().wait(1000)
+  })
   
   it('Should render a header', () => {
     cy.get('Header')
       .should('be.visible')
       .should('contain', 'Cheers For Fears')
-  });
+  })
 
   it('Should render a resource', () => {
     cy.intercept('GET', 'https://salty-sea-12550.herokuapp.com/api/v1/quotes', {
@@ -35,22 +35,22 @@ describe('Resource Page', () => {
       .then(quoteDetails => {
         expect(quoteDetails.content).to.eq("Anger makes you smaller")
       }).as('content')
-  });
+  })
 
   it('Should take the user back to the landing page when the start again button is pressed', () => {
     cy.get('.main--container')
       .get('button')
       .first()
-      .click();
+      .click()
 
-    cy.url('should.be', 'http://localhost:3000');
-  });
+    cy.url('should.be', 'http://localhost:3000')
+  })
 
   it('Should take the user back to the add resource page when the add message button is clicked', () => {
     cy.get('.main--container')
       .get('button[name="addMessage"]')
-      .click();
+      .click()
 
-    cy.url('should.be', 'http://localhost:3000/');
-  });
+    cy.url('should.be', 'http://localhost:3000/')
+  })
 })

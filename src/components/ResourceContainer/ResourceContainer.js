@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-
-import './ResourceContainer.css';
+import './ResourceContainer.css'
 
 function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedResource }) {
   return (
@@ -25,7 +24,7 @@ function ResourceContainer({ resources, handleStartAgain, userEmotion, selectedR
   )
 }
 
-export default ResourceContainer;
+export default ResourceContainer
 
 ResourceContainer.prototypes = {
   resources: PropTypes.arrayOf(PropTypes.object).isRequired,

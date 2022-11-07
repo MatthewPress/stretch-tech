@@ -1,9 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
-
-import logo from '../../assets/emotions_monster.png';
-
-import './Header.css';
+import logo from '../../assets/emotions_monster.png'
+import './Header.css'
 
 function Header({ handleStartAgain }) {
   return (
@@ -16,7 +14,7 @@ function Header({ handleStartAgain }) {
   )
 }
 
-export default Header;
+export default Header
 
 Header.prototypes = {
   handleStartAgain: PropTypes.func.isRequired

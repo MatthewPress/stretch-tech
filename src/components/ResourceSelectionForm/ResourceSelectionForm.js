@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-
-import './ResourceSelectionForm.css';
+import './ResourceSelectionForm.css'
 
 function ResourceSelectionForm({ message, formFields, handleSubmit, userEmotion }) {
 
@@ -21,7 +20,7 @@ function ResourceSelectionForm({ message, formFields, handleSubmit, userEmotion 
         </button>
       </Link>
     )
-  });
+  })
 
   return (
     <form>
@@ -33,7 +32,7 @@ function ResourceSelectionForm({ message, formFields, handleSubmit, userEmotion 
   )
 }
 
-export default ResourceSelectionForm;
+export default ResourceSelectionForm
 
 ResourceSelectionForm.prototypes = {
   message: PropTypes.string.isRequired, 
