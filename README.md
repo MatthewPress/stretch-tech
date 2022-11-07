@@ -61,6 +61,7 @@ The project specs can be found [here](https://frontend.turing.edu/projects/modul
 
 ## Setup
 - Visit the [deployed site](https://stretch-tech.vercel.app/)
+- Link to [Back End](https://github.com/MatthewPress/stretch-tech-api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
